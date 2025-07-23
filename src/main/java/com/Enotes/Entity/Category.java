@@ -20,10 +20,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Category {
+public class Category extends CategoryBaseModel{
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer id;
 	
 	@Column(name = "Category_Name")
@@ -36,19 +36,6 @@ public class Category {
 	@Size(min = 10, max = 200, message = "Category description cannot be empty")
 	public String description;
 	
-	public Boolean isActive;
 	
-	
-	public Boolean isDeleted;
-	
-	
-	public Integer createdBy;
 
-	public Date createdDate;
-	
-	
-	public Integer updatedBy;
-	
-	
-	public Date updatedDate;
 }
